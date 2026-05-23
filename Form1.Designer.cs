@@ -36,7 +36,7 @@
             button7 = new Button();
             button8 = new Button();
             button9 = new Button();
-            button10 = new Button();
+            numb1 = new Button();
             button11 = new Button();
             label1 = new Label();
             button2 = new Button();
@@ -130,15 +130,15 @@
             button9.UseVisualStyleBackColor = true;
             button9.Click += button9_Click;
             // 
-            // button10
+            // numb1
             // 
-            button10.Location = new Point(12, 144);
-            button10.Name = "button10";
-            button10.Size = new Size(52, 53);
-            button10.TabIndex = 10;
-            button10.Text = "1";
-            button10.UseVisualStyleBackColor = true;
-            button10.Click += button10_Click;
+            numb1.Location = new Point(12, 144);
+            numb1.Name = "numb1";
+            numb1.Size = new Size(52, 53);
+            numb1.TabIndex = 10;
+            numb1.Text = "1";
+            numb1.UseVisualStyleBackColor = true;
+            numb1.Click += button10_Click;
             // 
             // button11
             // 
@@ -252,7 +252,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(297, 450);
+            ClientSize = new Size(297, 417);
             Controls.Add(label4);
             Controls.Add(button16);
             Controls.Add(button15);
@@ -263,7 +263,7 @@
             Controls.Add(button12);
             Controls.Add(button2);
             Controls.Add(label1);
-            Controls.Add(button10);
+            Controls.Add(numb1);
             Controls.Add(button11);
             Controls.Add(button9);
             Controls.Add(button8);
@@ -273,6 +273,8 @@
             Controls.Add(button4);
             Controls.Add(button3);
             Controls.Add(button1);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
             Name = "Form1";
             Text = "Form1";
             Load += Form1_Load;
@@ -290,7 +292,7 @@
         private Button button7;
         private Button button8;
         private Button button9;
-        private Button button10;
+        private Button numb1;
         private Button button11;
         private Label label1;
         private Button button2;

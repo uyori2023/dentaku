@@ -77,7 +77,7 @@ namespace dentaku
 
         private void button10_Click(object sender, EventArgs e)
         {
-            Newnumplus(button10.Text);
+            Newnumplus(numb1.Text);
         }
 
         private void button16_Click(object sender, EventArgs e)
