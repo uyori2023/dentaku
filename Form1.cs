@@ -40,6 +40,7 @@ namespace dentaku
             label4.Text = "";
             _label1text = "";
             _label3text = "";
+            _mode = (int)_num.none;
         }
 
         private void NewRefresh()
