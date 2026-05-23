@@ -38,16 +38,16 @@
             button9 = new Button();
             numb1 = new Button();
             button11 = new Button();
-            label1 = new Label();
+            lblLeft = new Label();
             button2 = new Button();
             button12 = new Button();
             button13 = new Button();
             button14 = new Button();
-            label2 = new Label();
-            label3 = new Label();
+            lblShisoku = new Label();
+            lblRight = new Label();
             button15 = new Button();
             button16 = new Button();
-            label4 = new Label();
+            lblAnswer = new Label();
             SuspendLayout();
             // 
             // button1
@@ -150,16 +150,16 @@
             button11.UseVisualStyleBackColor = true;
             button11.Click += button11_Click;
             // 
-            // label1
+            // lblLeft
             // 
-            label1.AutoSize = true;
-            label1.ForeColor = Color.Black;
-            label1.Location = new Point(11, 41);
-            label1.Name = "label1";
-            label1.Size = new Size(38, 15);
-            label1.TabIndex = 11;
-            label1.Text = "label1";
-            label1.TextAlign = ContentAlignment.BottomRight;
+            lblLeft.AutoSize = true;
+            lblLeft.ForeColor = Color.Black;
+            lblLeft.Location = new Point(11, 41);
+            lblLeft.Name = "lblLeft";
+            lblLeft.Size = new Size(40, 15);
+            lblLeft.TabIndex = 11;
+            lblLeft.Text = "lblLeft";
+            lblLeft.TextAlign = ContentAlignment.BottomRight;
             // 
             // button2
             // 
@@ -201,23 +201,23 @@
             button14.UseVisualStyleBackColor = true;
             button14.Click += button14_Click;
             // 
-            // label2
+            // lblShisoku
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(94, 41);
-            label2.Name = "label2";
-            label2.Size = new Size(38, 15);
-            label2.TabIndex = 16;
-            label2.Text = "label2";
+            lblShisoku.AutoSize = true;
+            lblShisoku.Location = new Point(94, 41);
+            lblShisoku.Name = "lblShisoku";
+            lblShisoku.Size = new Size(61, 15);
+            lblShisoku.TabIndex = 16;
+            lblShisoku.Text = "lblShisoku";
             // 
-            // label3
+            // lblRight
             // 
-            label3.AutoSize = true;
-            label3.Location = new Point(166, 41);
-            label3.Name = "label3";
-            label3.Size = new Size(38, 15);
-            label3.TabIndex = 17;
-            label3.Text = "label3";
+            lblRight.AutoSize = true;
+            lblRight.Location = new Point(166, 41);
+            lblRight.Name = "lblRight";
+            lblRight.Size = new Size(48, 15);
+            lblRight.TabIndex = 17;
+            lblRight.Text = "lblRight";
             // 
             // button15
             // 
@@ -239,30 +239,30 @@
             button16.UseVisualStyleBackColor = true;
             button16.Click += button16_Click;
             // 
-            // label4
+            // lblAnswer
             // 
-            label4.AutoSize = true;
-            label4.Location = new Point(191, 90);
-            label4.Name = "label4";
-            label4.Size = new Size(38, 15);
-            label4.TabIndex = 20;
-            label4.Text = "label4";
+            lblAnswer.AutoSize = true;
+            lblAnswer.Location = new Point(191, 90);
+            lblAnswer.Name = "lblAnswer";
+            lblAnswer.Size = new Size(59, 15);
+            lblAnswer.TabIndex = 20;
+            lblAnswer.Text = "lblAnswer";
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(297, 417);
-            Controls.Add(label4);
+            Controls.Add(lblAnswer);
             Controls.Add(button16);
             Controls.Add(button15);
-            Controls.Add(label3);
-            Controls.Add(label2);
+            Controls.Add(lblRight);
+            Controls.Add(lblShisoku);
             Controls.Add(button14);
             Controls.Add(button13);
             Controls.Add(button12);
             Controls.Add(button2);
-            Controls.Add(label1);
+            Controls.Add(lblLeft);
             Controls.Add(numb1);
             Controls.Add(button11);
             Controls.Add(button9);
@@ -294,15 +294,15 @@
         private Button button9;
         private Button numb1;
         private Button button11;
-        private Label label1;
+        private Label lblLeft;
         private Button button2;
         private Button button12;
         private Button button13;
         private Button button14;
-        private Label label2;
-        private Label label3;
+        private Label lblShisoku;
+        private Label lblRight;
         private Button button15;
         private Button button16;
-        private Label label4;
+        private Label lblAnswer;
     }
 }
