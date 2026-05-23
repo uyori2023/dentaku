@@ -1,16 +1,26 @@
 using System.Drawing.Text;
+using System.IO.Pipes;
 
 namespace dentaku
 {
     public partial class Form1 : Form
     {
-        public string _mode = "";
+        private enum _num
+        {
+            none,
+            plus,
+            minus,
+            kakeru,
+            waru,
+        }
+
+        private int _mode = 0;
         public string _label1text = "";
         public string _label3text = "";
 
         private void Newnumplus(string num)
         {
-            if (string.IsNullOrEmpty(_mode))
+            if (_mode == (int)_num.none)
             {
                 _label1text += num;
                 NewRefresh();
@@ -30,7 +40,6 @@ namespace dentaku
             label4.Text = "";
             _label1text = "";
             _label3text = "";
-            _mode = "";
         }
 
         private void NewRefresh()
@@ -46,6 +55,7 @@ namespace dentaku
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            _mode = (int)_num.none;
             label2.Text = "";
             label4.Text = "";
             NewRefresh();
@@ -53,25 +63,25 @@ namespace dentaku
 
         private void button13_Click_1(object sender, EventArgs e)
         {
-            _mode = "1";
+            _mode = (int)_num.plus;
             label2.Text = "+";
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            _mode = "2";
+            _mode = (int)_num.minus;
             label2.Text = "-";
         }
 
         private void button14_Click(object sender, EventArgs e)
         {
-            _mode = "3";
+            _mode = (int)_num.kakeru;
             label2.Text = "×";
         }
 
         private void button12_Click(object sender, EventArgs e)
         {
-            _mode = "4";
+            _mode = (int)_num.waru;
             label2.Text = "/";
         }
 
@@ -87,81 +97,38 @@ namespace dentaku
 
         private void button15_Click(object sender, EventArgs e)
         {
-            int mode = int.Parse(_mode);
+            int label1int = int.Parse(label1.Text);
+            int label3int = int.Parse(label3.Text);
 
-            int label1int = int.Parse(_label1text);
-            int label3int = int.Parse(_label3text);
-            int anser;
+            int anser = 0;
 
-            if (mode == 1)
+            switch (_mode)
             {
-                anser = label1int + label3int;
-
-                label4.Text = $"= {anser}";
-            } else if (mode == 2)
-            {
-                anser = label1int - label3int;
-                label4.Text = $"= {anser}";
-            } else if (mode == 3)
-            {
-                anser = label1int * label3int;
-                label4.Text = $"= {anser}";
-            } else if (mode == 4)
-            {
-                try
-                {
+                case (int)_num.none:
+                    return;
+                case (int)_num.plus:
+                    anser = label1int + label3int;
+                    label4.Text = "=" + anser.ToString();
+                    return;
+                case (int)_num.minus:
+                    anser = label1int - label3int;
+                    label4.Text = "=" + anser.ToString();
+                    return;
+                case (int)_num.kakeru:
+                    anser = label1int * label3int;
+                    label4.Text = "=" + anser.ToString();
+                    return;
+                case (int)_num.waru:
                     anser = label1int / label3int;
-                    label4.Text = $"= {anser}";
-                } catch
-                {
-                    label4.Text = "計算エラー";
-                }
+                    label4.Text = "=" + anser.ToString();
+                    return;
             }
         }
 
         private void button11_Click(object sender, EventArgs e)
         {
-            Newnumplus(button11.Text);
-        }
-
-        private void button9_Click(object sender, EventArgs e)
-        {
-            Newnumplus(button9.Text);
-        }
-
-        private void button8_Click(object sender, EventArgs e)
-        {
-            Newnumplus(button8.Text);
-        }
-
-        private void button7_Click(object sender, EventArgs e)
-        {
-            Newnumplus(button7.Text);
-        }
-
-        private void button6_Click(object sender, EventArgs e)
-        {
-            Newnumplus(button6.Text);
-        }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-            Newnumplus(button5.Text);
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            Newnumplus(button4.Text);
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            Newnumplus(button3.Text);
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Newnumplus(button1.Text);
+            Button btn = (Button)sender;
+            Newnumplus(btn.Text);
         }
     }
 }
