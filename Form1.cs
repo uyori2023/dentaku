@@ -98,6 +98,10 @@ namespace dentaku
 
         private void button15_Click(object sender, EventArgs e)
         {
+            if (label1.Text == string.Empty && label3.Text == string.Empty)
+            {
+                return;
+            }
             int label1int = int.Parse(label1.Text);
             int label3int = int.Parse(label3.Text);
 
